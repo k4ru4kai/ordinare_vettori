@@ -1,0 +1,17 @@
+# Inserire una lista di numeri separati da spazi
+numbers = list(map(int, input("Inserisci una lista di numeri separati da spazi: ").split()))
+
+# Inizializza un puntatore per la posizione in cui inserire il prossimo elemento non zero
+non_zero_position = 0
+
+# Scorri la lista
+for i in range(len(numbers)):
+    if numbers[i] != 0:
+        # Sposta l'elemento non zero nella posizione corretta
+        numbers[non_zero_position], numbers[i] = numbers[i], numbers[non_zero_position]
+        # Sposta il puntatore in avanti
+        non_zero_position += 1
+
+# Stampa il risultato
+print("Lista trasformata:", *numbers)
+
